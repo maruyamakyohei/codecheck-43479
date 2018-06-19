@@ -96,4 +96,29 @@ public class App {
 			return -1;
 		}
 	}
+
+	private static int changeString(String s) {
+
+		if (s.equals("A")) {
+			return 0;
+		} else if (s.equals("B")) {
+			return 1;
+		} else if (s.equals("C")) {
+			return 2;
+		} else if (s.equals("D")) {
+			return 3;
+		} else if (s.equals("E")) {
+			return 4;
+		} else if (s.equals("F")) {
+			return 5;
+		} else if (s.equals("G")) {
+			return 6;
+		} else if (s.equals("H")) {
+			return 7;
+		} else if (s.equals("I")) {
+			return 8;
+		} else {
+			return -1;
+		}
+	}
 }
