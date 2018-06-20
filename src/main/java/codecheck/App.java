@@ -61,14 +61,6 @@ public class App {
 		// 変換結果初期化
 		String result = "";
 
-		return result;
-	}
-
-	private static String align(String target) {
-
-		// 変換結果初期化
-		String result = "";
-
 		// 対象の10進数をint型に変換
 		int targetInt = Integer.parseInt(target);
 
@@ -115,6 +107,15 @@ public class App {
 
 		return result;
 	}
+
+	private static String align(String target) {
+
+		// 変換結果初期化
+		String result = "";
+
+		return result;
+	}
+
 
 	private static int changeInt(String s) {
 
