@@ -154,7 +154,7 @@ public class App {
 		String plus = "";
 		for (int i = 0; i < plusArray.length; i++) {
 			if (plusArray[i] != null) {
-				plus = plus + plusArray[i];
+				plus = plusArray[i] + plus;
 			}
 		}
 
