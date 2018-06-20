@@ -154,7 +154,7 @@ public class App {
 		String plus = "";
 		for (int i = 0; i < plusArray.length; i++) {
 
-			if (i == plusArray.length -1 ) {
+			if (i == plusArray.length -2 ) {
 				if (plusArray[i] == null) {
 					break;
 				} else if(plusArray[i].equals("A")) {
