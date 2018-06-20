@@ -17,7 +17,7 @@ public class App {
 			output = encode(args[1]);
 		} else {
 			// 全てHとなる数式を算出
-			output = align(args[0]);
+			output = align(args[1]);
 		}
 		// 結果を出力
 		System.out.println(output);
