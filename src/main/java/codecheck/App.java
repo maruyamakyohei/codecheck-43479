@@ -153,7 +153,7 @@ public class App {
 		// 加算するアルファベット数字を文字列として格納
 		String plus = "";
 		for (int i = 0; i < plusArray.length; i++) {
-			if (!plusArray[i].isEmpty()) {
+			if (plusArray[i] != null) {
 				plus = plus + plusArray[i];
 			}
 		}
