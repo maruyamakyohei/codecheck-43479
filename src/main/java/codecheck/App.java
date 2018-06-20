@@ -113,6 +113,60 @@ public class App {
 		// 変換結果初期化
 		String result = "";
 
+		// 加算するアルファベット数字を格納する配列を初期化
+		String[] plusArray = new String[target.length() + 1];
+
+		// 対象のアルファベット数字を末尾から1桁ずつ配列に格納
+		String[] targetArray = new String[target.length()];
+		for (int i = 0; i < target.length(); i++) {
+			targetArray[i] = String.valueOf(target.charAt(target.length() - 1 - i));
+		}
+
+		// 繰り上がり有無を判定するためのフラグを初期化
+		int j = 0;
+
+		// 末尾から1桁ずつ加算するアルファベット数字を算出
+		for (int i = 0; i < target.length(); i++) {
+
+			// 繰り上げの有無を判定して加算するアルファベット数字を算出
+			if (j == 0) {
+				// 繰り上げなし用の算出ロジックを実行
+				plusArray[i] = changeStringH(targetArray[i]);
+			} else {
+				// 繰り上げあり用の算出ロジックを実行
+				plusArray[i] = changeStringHPlus(targetArray[i]);
+			}
+
+			// 算出したアルファベット数字を加算した結果、次の桁への繰り上がりがあるかを判定
+			if (plusArray[i].equals("I") || (plusArray[i].equals("H") && j == 1)) {
+				j = 1;
+			} else {
+				j = 0;
+			}
+		}
+
+		// 繰り上がりがある場合、「G」を追加
+		if(j == 1) {
+			plusArray[target.length() + 1] = "G";
+		}
+
+		// 加算するアルファベット数字を文字列として格納
+		String plus = "";
+		for (int i = 0; i < plusArray.length; i++) {
+			if (!plusArray[i].isEmpty()) {
+				plus = plus + plusArray[i];
+			}
+		}
+
+		// 答え（Hのみのアルファベット数字）を格納
+		String answer = "";
+		for (int i = 0; i < plus.length(); i++) {
+			answer = answer + "H";
+		}
+
+		// 出力する数式を作成
+		result = target + " + " + plus + " = " + answer;
+
 		return result;
 	}
 
@@ -162,6 +216,56 @@ public class App {
 			return "H";
 		} else if (i == 8) {
 			return "I";
+		} else {
+			return "Z";
+		}
+	}
+
+	private static String changeStringH(String s) {
+
+		if (s.equals("A")) {
+			return "H";
+		} else if (s.equals("B")) {
+			return "G";
+		} else if (s.equals("C")) {
+			return "F";
+		} else if (s.equals("D")) {
+			return "E";
+		} else if (s.equals("E")) {
+			return "D";
+		} else if (s.equals("F")) {
+			return "C";
+		} else if (s.equals("G")) {
+			return "B";
+		} else if (s.equals("H")) {
+			return "A";
+		} else if (s.equals("I")) {
+			return "I";
+		} else {
+			return "Z";
+		}
+	}
+
+	private static String changeStringHPlus(String s) {
+
+		if (s.equals("A")) {
+			return "G";
+		} else if (s.equals("B")) {
+			return "F";
+		} else if (s.equals("C")) {
+			return "E";
+		} else if (s.equals("D")) {
+			return "D";
+		} else if (s.equals("E")) {
+			return "C";
+		} else if (s.equals("F")) {
+			return "B";
+		} else if (s.equals("G")) {
+			return "A";
+		} else if (s.equals("H")) {
+			return "I";
+		} else if (s.equals("I")) {
+			return "H";
 		} else {
 			return "Z";
 		}
