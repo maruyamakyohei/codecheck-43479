@@ -147,7 +147,7 @@ public class App {
 
 		// 繰り上がりがある場合、「G」を追加
 		if(j == 1) {
-			plusArray[target.length() + 1] = "G";
+			plusArray[target.length()] = "G";
 		}
 
 		// 加算するアルファベット数字を文字列として格納
