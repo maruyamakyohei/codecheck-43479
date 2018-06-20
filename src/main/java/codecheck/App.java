@@ -165,7 +165,7 @@ public class App {
 		}
 
 		// 加算する方のアルファベット数字の先頭Aは削除
-		if (String.valueOf(plus.charAt(0)).equals("A")) {
+		if (String.valueOf(plus.charAt(0)).equals("A") && !plus.equals("A")) {
 			plus = plus.replaceFirst("A", "");
 		}
 
