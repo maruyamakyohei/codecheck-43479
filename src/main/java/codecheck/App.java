@@ -170,7 +170,7 @@ public class App {
 		}
 
 		// 出力する数式を作成
-		result = target + " + " + plus.replaceFirst("A", "") + " = " + answer;
+		result = target + " + " + plus + " = " + answer;
 
 		return result;
 	}
