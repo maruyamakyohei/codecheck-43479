@@ -164,8 +164,8 @@ public class App {
 			answer = answer + "H";
 		}
 
-		// 出力する数式を作成
-		result = target + " + " + plus + " = " + answer;
+		// 出力する数式を作成(加算する方のアルファベット数字の先頭がAの場合は削除して出力)
+		result = target + " + " + plus.replaceFirst("A", "") + " = " + answer;
 
 		return result;
 	}
