@@ -81,7 +81,7 @@ public class App {
 		String[] resultArray = new String[count];
 
 		// アルファベット数字を1桁ずつ配列に格納
-		for (int i = count - 1 ; i < 0; i--) {
+		for (int i = count - 1 ; i > 0; i--) {
 
 			int a = 1;
 
